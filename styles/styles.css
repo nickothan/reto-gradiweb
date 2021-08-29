@@ -2,7 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
   --principal: #a970ff;
+  --principal-text: #505050;
+  --second-text: #9c9c9c;
+  font-family: sans-serif;
+}
+
+body {
+  color: var(--principal-text);
 }
 
 .ubicacion-actual{
@@ -53,7 +61,7 @@
 
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
-  box-shadow: 5px 10px 100px 2px #000;
+  box-shadow: 1px 1px 35px -15px #a7a7a7;
 }
 
 .temperatura-lado-izquierdo::after {
@@ -115,4 +123,97 @@
   position: relative;
   top: -10px;
   font-size: 1rem;
+}
+
+.second-part{
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+  margin-top: 30px;
+  width: 88%;
+}
+
+.days-ago > h3{
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.days-ago > h3 > span{
+  font-weight: 600;
+}
+
+.days-ago ul > li {
+  position: relative;
+  display: flex;
+  margin-bottom: 10px;
+  height: 70px;
+  width: 250px;
+  border-radius: 15px;
+  border: 1px solid #a7a7a7;
+  box-shadow: 1px 1px 35px -15px #a7a7a7;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.days-ago ul > li:hover {
+  transform: scale(1.1);
+}
+
+.days-ago ul > li > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 70%;
+}
+
+.days-ago ul > li > .day{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.days-ago ul > li > .day  p{
+  display: flex;
+  flex-direction: column;
+}
+
+.days-ago ul > li > .day  p > span{
+  font-size: .8rem;
+  color: var(--second-text);
+}
+
+.days-ago ul > li > .day > img{
+  margin-right: 15px;
+  width: 40px;
+
+
+}
+
+.days-ago ul > li > .temperature{
+  position: absolute;
+  padding: 5px;
+  top: -2px;
+  right: -2px;
+  width: 70px;
+  height: 71px;
+  background-color: #e9f0ff;
+  
+  color: var(--color-text);
+  font-size: .9rem;
+  font-weight: 500;
+  border-radius: 15px;
+}
+
+.days-ago ul > li:nth-child(1) > .temperature{
+  background-color: var(--principal);
+  color: white;
+}
+
+.days-ago ul > li > .temperature > p > span{
+  position: relative;
+  top: -2px;
+  font-size: .65rem;
 }
