@@ -11,18 +11,27 @@
 
 body {
   color: var(--principal-text);
+  background-color: #a970ff;
+}
+
+.main {
+  background-color: #fff;
+  margin: auto;
+  margin-top: 100px;
+  height: auto;
+  width: 90%;
+  border-radius: 25px;
 }
 
 .ubicacion-actual{
   position: relative;
-  margin: auto;
-  margin-top: 50px;
+  margin: 30px auto;
   width: 90%;
   height: 300px;
   background: no-repeat center url(../img/bogota-nocturna.jpg) #6f10a8;
   opacity: 0.9;
   /*background: url('https://i.pinimg.com/originals/ad/3a/44/ad3a44745cc815386e6ce2399fa66904.jpg') #6f10a8;*/
-  background-size: 100% 100%;
+  background-size: 100%;
   border-radius: 25px;
 
 }
@@ -56,7 +65,7 @@ body {
 .temperatura-lado-izquierdo {
   position: fixed;
   top: 150px;
-  width: 100px;
+  width: 85px;
   background-color: var(--principal);
 
   border-bottom-right-radius: 20px;
@@ -68,11 +77,11 @@ body {
   content: '';
   position: absolute;
   display: block;
-  border-top: 7px solid var(--principal);
-  border-bottom: 7px solid transparent;
-  border-left: 7px solid var(--principal);
-  border-right: 7px solid transparent;
-  bottom: -14px;
+  border-top: 5px solid var(--principal);
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--principal);
+  border-right: 5px solid transparent;
+  bottom: -10px;
   left: 0px;
 }
 
@@ -94,11 +103,11 @@ body {
   content: '';
   position: absolute;
   display: block;
-  border-top: 7px solid transparent;
-  border-left: 7px solid #6f10a8;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #6f10a8;
-  top: -14px;
+  border-top: 5px solid transparent;
+  border-left: 5px solid #6f10a8;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #6f10a8;
+  top: -10px;
   left: 0px;
 }
 
