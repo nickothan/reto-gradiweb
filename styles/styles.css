@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  --principal: #a970ff;
+  --principal: #7d68e9;
+  --second: #e1e8f0;
   --principal-text: #505050;
   --second-text: #9c9c9c;
   font-family: sans-serif;
@@ -11,19 +12,20 @@
 
 body {
   color: var(--principal-text);
-  background-color: #a970ff;
+  background-color: var(--second);
 }
 
 .main {
   background-color: #fff;
   margin: auto;
   margin-top: 100px;
+  padding-top: 20px;
   height: auto;
   width: 90%;
   border-radius: 25px;
 }
 
-.ubicacion-actual{
+.ubicacion-actual {
   position: relative;
   margin: 30px auto;
   width: 90%;
@@ -33,7 +35,6 @@ body {
   /*background: url('https://i.pinimg.com/originals/ad/3a/44/ad3a44745cc815386e6ce2399fa66904.jpg') #6f10a8;*/
   background-size: 100%;
   border-radius: 25px;
-
 }
 
 .ubicacion-actual > p {
@@ -45,7 +46,6 @@ body {
   text-shadow: 3px 5px 10px #fff, -2px -2px 10px #fff;
   font-size: 2rem;
   font-weight: 600;
-
 }
 
 .ubicacion-actual > p > svg {
@@ -64,7 +64,7 @@ body {
 
 .temperatura-lado-izquierdo {
   position: fixed;
-  top: 150px;
+  top: 170px;
   width: 85px;
   background-color: var(--principal);
 
@@ -85,7 +85,7 @@ body {
   left: 0px;
 }
 
-.temperatura-lado-izquierdo .estado-clima{
+.temperatura-lado-izquierdo .estado-clima {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -115,17 +115,15 @@ body {
   width: 50px;
 }
 
-.temperatura-lado-izquierdo .temperatura{
+.temperatura-lado-izquierdo .temperatura {
   display: block;
   padding: 10px;
   color: white;
-  
 }
-.temperatura-lado-izquierdo .temperatura p{
+.temperatura-lado-izquierdo .temperatura p {
   display: block;
   text-align: center;
   font-size: 1.8rem;
-
 }
 
 .temperatura-lado-izquierdo .temperatura p > span {
@@ -134,7 +132,7 @@ body {
   font-size: 1rem;
 }
 
-.second-part{
+.second-part {
   display: grid;
   justify-items: center;
   grid-template-columns: 3fr 5fr 3fr;
@@ -144,7 +142,7 @@ body {
 }
 
 .days-ago > h3,
-.place-visit .titles h3{
+.place-visit .titles h3 {
   margin-bottom: 15px;
   font-size: 1.5rem;
   text-align: center;
@@ -152,7 +150,7 @@ body {
 }
 
 .days-ago > h3 > span,
-.place-visit .titles h3 > span{
+.place-visit .titles h3 > span {
   font-weight: 600;
 }
 
@@ -169,8 +167,13 @@ body {
   cursor: pointer;
 }
 
-.days-ago ul > li:hover {
-  transform: scale(1.1);
+.days-ago ul > li:hover,
+.place:hover,
+.img-izq:hover,
+.img-top:hover,
+.img-bottom:hover,
+.place-visit .titles > div > .user:hover {
+  transform: scale(1.08);
 }
 
 .days-ago ul > li > div {
@@ -181,52 +184,50 @@ body {
   width: 70%;
 }
 
-.days-ago ul > li > .day{
+.days-ago ul > li > .day {
   font-size: 1rem;
   font-weight: 600;
 }
 
-.days-ago ul > li > .day  p{
+.days-ago ul > li > .day p {
   display: flex;
   flex-direction: column;
 }
 
-.days-ago ul > li > .day  p > span{
-  font-size: .8rem;
+.days-ago ul > li > .day p > span {
+  font-size: 0.8rem;
   color: var(--second-text);
 }
 
-.days-ago ul > li > .day > img{
+.days-ago ul > li > .day > img {
   margin-right: 15px;
   width: 40px;
-
-
 }
 
-.days-ago ul > li > .temperature{
+.days-ago ul > li > .temperature {
   position: absolute;
   padding: 5px;
   top: -2px;
   right: -2px;
   width: 70px;
   height: 71px;
-  background-color: #e9f0ff;
-  
+  background-color: var(--second);
+
   color: var(--color-text);
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border-radius: 15px;
 }
 
-.days-ago ul > li:nth-child(1) > .temperature{
+.days-ago ul > li:nth-child(1) > .temperature {
   background-color: var(--principal);
   color: white;
 }
 
-.days-ago ul > li > .temperature > p > span{
+.days-ago ul > li > .temperature > p > span {
   position: relative;
   top: -2px;
-  font-size: .65rem;
+  font-size: 0.65rem;
 }
 
 .place-visit {
@@ -234,83 +235,153 @@ body {
 }
 
 .place-visit .titles {
-  
   display: flex;
   justify-content: space-between;
   text-align: center;
 }
 
-.place-visit .titles h3{
+.place-visit .titles h3 {
   font-size: 1.8rem;
 }
-.place-visit .titles > div{
+.place-visit .titles > div {
   position: relative;
   top: -8px;
   display: flex;
   align-items: center;
-  font-size: .8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
-.place-visit .titles > div > .user{
+.place-visit .titles > div > .user {
   margin-left: 5px;
   width: 20px;
   height: 20px;
-  background-color: #a970ff;
+  background-color: var(--principal);
   border-radius: 5px;
 }
 
-.images{
+.images {
   display: flex;
   justify-content: space-between;
 }
 
 .img-izq,
-.imgs-der{
+.imgs-der {
   width: 45%;
-  
 }
 
-.img-izq{
+.img-izq {
   display: inline-flex;
   padding: 20px;
   align-items: baseline;
   height: 220px;
   border-radius: 25px;
   box-shadow: 1px 1px 35px -15px #a7a7a7;
+  transition-duration: 300ms;
+  cursor: pointer;
 }
 
 .img-izq > p,
 .img-top > p,
-.img-bottom > p{
+.img-bottom > p {
   margin-left: 5px;
 }
 
 .img-izq > img,
 .img-top > img,
-.img-bottom > img{
+.img-bottom > img {
   position: relative;
   top: 5px;
   width: 15px;
 }
 
-.imgs-der{
+.imgs-der {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .img-top,
-.img-bottom{
+.img-bottom {
   display: inline-flex;
   align-items: baseline;
   padding: 5px 15px;
   border-radius: 15px;
   box-shadow: 1px 1px 35px -15px #a7a7a7;
+  transition-duration: 300ms;
+  cursor: pointer;
 }
 
-.img-top{
+.img-top {
   height: 30%;
 }
 
-.img-bottom{
+.img-bottom {
   height: 60%;
+}
+
+.places {
+  position: relative;
+  top: -100px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.place {
+  margin-bottom: 10px;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.place,
+.add-location {
+  background-color: white;
+  box-shadow: 1px 1px 35px -5px #a7a7a7;
+  border-radius: 20px;
+}
+
+.place > div {
+  display: flex;
+}
+.place > div > img {
+  padding: 10px;
+  width: 70px;
+  background-color: #e9f0ff;
+  border-radius: 10px;
+}
+.place > div > .info {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+.place-temperature {
+  display: flex;
+  font-size: 1.8rem;
+  padding-right: 10px;
+  border-right: 2px solid var(--principal-text);
+}
+
+.place-temperature > span {
+  font-size: 0.8rem;
+}
+
+.place-location {
+  margin-left: 10px;
+}
+
+.info-temperature {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  color: var(--second-text);
+  font-size: 0.7rem;
+}
+
+.info-temperature p {
+  border-left: 1px solid var(--second-text);
+  padding-left: 15px;
+}
+
+.info-temperature > p:first-child {
+  border: none;
 }
