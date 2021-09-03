@@ -12,19 +12,22 @@
   <body>
     <div class="main">
       <div class="ubicacion-actual">
-        <img src="img/map-marker-alt-solid.svg" alt="" srcset="" />
-        <p>Bogotá</p>
+        <p>
+          <img src="img/map-marker-alt-solid.svg" alt="" srcset="" />
+          <span id="city-actual-name"> City </span>
+        </p>
         <img src="img/tocantins_map.svg" alt="mapa" />
       </div>
 
       <div class="temperatura-lado-izquierdo">
         <di class="estado-clima">
           <img src="img/soleado.svg" alt="" srcset="" />
-          <p>Cloudy</p></di
+          <p id="weather-acity-actual">Cloudy</p></di
         >
-        <di class="temperatura">
-          <p>31<span>°C</span></p></di
-        >
+        <div class="temperatura">
+          <p id="temperature-city-actual">31</p>
+          <span>°C</span>
+        </div>
       </div>
 
       <div class="second-part">
@@ -138,6 +141,10 @@
           <div class="add-location">Add New Locations</div>
         </div>
       </div>
+    </div>
+
+    <div>
+      <script src="js/index.js"></script>
     </div>
   </body>
 </html>
