@@ -4,6 +4,10 @@ const API_KEY = '35f44bee6f329fca8fb84e86f7842faa'
 
 const API_DAY = `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY}`
 
+
+const API_PARIS = `https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=${API_KEY}`
+
+
 const API_DAYS = `https://api.openweathermap.org/data/2.5/forecast?q=${CITY_NAME}&appid=${API_KEY}`
 
 //? Día actual
@@ -12,14 +16,6 @@ let nameCityActual = document.getElementById('city-actual-name')
 let weatherCityActual = document.getElementById('weather-acity-actual')
 let temperatureCityActual = document.getElementById('temperature-city-actual')
 
-//? Pronostico de dias
-//? dia 1
-
-let forecast1 = document.getElementById('forecastDay1')
-
-//? dia 2
-
-//? dia 3
 
 function ajax(url) {
   return new Promise(function (resolve, reject) {
@@ -66,9 +62,6 @@ async function loadInfoCallDays() {
         'Saturday'
       ][new Date(fecha).getDay()]
 
-    let dia = ''
-
-    console.log(days.list)
     days.list.map((props) => {
       contador++
 
@@ -83,7 +76,9 @@ async function loadInfoCallDays() {
         let forecastWeather = document.getElementById(
           `forecastWeather${contadordiario}`
         )
-        forecastWeather.innerHTML = props.weather[0].description
+
+        forecastWeather.innerHTML = props.weather[0].main
+
 
         //? Temperatura maxima y minima
         let tempMax = document.getElementById(
@@ -107,7 +102,9 @@ async function loadInfoCallDays() {
         let forecastWeather = document.getElementById(
           `forecastWeather${contadordiario}`
         )
-        forecastWeather.innerHTML = props.weather[0].description
+
+        forecastWeather.innerHTML = props.weather[0].main
+
 
         //? Temperatura maxima y minima
         let tempMax = document.getElementById(
@@ -129,5 +126,32 @@ async function loadInfoCallDays() {
   }
 }
 
+
+async function loadInfoParis() {
+  try {
+    const city = await ajax(API_PARIS, loadInfoParis)
+    console.log(':: city : ', city)
+
+    let name = document.getElementById('cityName')
+    name.innerHTML = city.name
+
+    let county = document.getElementById('cityCountryName')
+    county.innerHTML = city.sys.country
+
+    let temperature = document.getElementById('cityTemp')
+    temperature.innerHTML = Math.trunc(city.main.temp - 273.15)
+
+    let humicity = document.getElementById('cityHumicity')
+    humicity.innerHTML = city.main.humidity
+
+    let windSpeed = document.getElementById('cityWindSpeed')
+    windSpeed.innerHTML = city.wind.speed
+  } catch (error) {
+    console.error(':: Error :', error)
+  }
+}
+
 loadInfoDayActual()
 loadInfoCallDays()
+loadInfoParis()
+
