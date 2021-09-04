@@ -38,7 +38,7 @@ body {
 }
 
 .ubicacion-actual > p {
-  display: block;
+  display: inline-flex;
   position: absolute;
   top: 10%;
   left: 10%;
@@ -48,7 +48,7 @@ body {
   font-weight: 600;
 }
 
-.ubicacion-actual > p > svg {
+.ubicacion-actual > p > img {
   width: 18px;
   filter: drop-shadow(0 1px 5px #fff);
 }
@@ -56,8 +56,8 @@ body {
 .ubicacion-actual > img {
   position: absolute;
   width: 50px;
-  top: 5%;
-  left: 26%;
+  top: 20%;
+  left: 12%;
   transform: rotate(90deg);
   filter: drop-shadow(0 1px 5px #fff);
 }
@@ -116,7 +116,8 @@ body {
 }
 
 .temperatura-lado-izquierdo .temperatura {
-  display: block;
+  display: flex;
+  justify-content: center;
   padding: 10px;
   color: white;
 }
