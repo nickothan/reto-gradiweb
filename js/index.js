@@ -4,7 +4,9 @@ const API_KEY = '35f44bee6f329fca8fb84e86f7842faa'
 
 const API_DAY = `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY}`
 
+
 const API_PARIS = `https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=${API_KEY}`
+
 
 const API_DAYS = `https://api.openweathermap.org/data/2.5/forecast?q=${CITY_NAME}&appid=${API_KEY}`
 
@@ -13,6 +15,7 @@ const API_DAYS = `https://api.openweathermap.org/data/2.5/forecast?q=${CITY_NAME
 let nameCityActual = document.getElementById('city-actual-name')
 let weatherCityActual = document.getElementById('weather-acity-actual')
 let temperatureCityActual = document.getElementById('temperature-city-actual')
+
 
 function ajax(url) {
   return new Promise(function (resolve, reject) {
@@ -73,7 +76,9 @@ async function loadInfoCallDays() {
         let forecastWeather = document.getElementById(
           `forecastWeather${contadordiario}`
         )
+
         forecastWeather.innerHTML = props.weather[0].main
+
 
         //? Temperatura maxima y minima
         let tempMax = document.getElementById(
@@ -97,7 +102,9 @@ async function loadInfoCallDays() {
         let forecastWeather = document.getElementById(
           `forecastWeather${contadordiario}`
         )
+
         forecastWeather.innerHTML = props.weather[0].main
+
 
         //? Temperatura maxima y minima
         let tempMax = document.getElementById(
@@ -118,6 +125,7 @@ async function loadInfoCallDays() {
     console.error(' :: Error ', error)
   }
 }
+
 
 async function loadInfoParis() {
   try {
@@ -146,3 +154,4 @@ async function loadInfoParis() {
 loadInfoDayActual()
 loadInfoCallDays()
 loadInfoParis()
+
