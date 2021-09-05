@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="ubicacion-actual">
+        <p>
+          <img src="img/map-marker-alt-solid.svg" alt="" srcset="" />
+          <span id="city-actual-name"> City </span>
+        </p>
+        <img src="img/tocantins_map.svg" alt="mapa" />
+      </div>
+
+      <div class="temperatura-lado-izquierdo">
+        <di class="estado-clima">
+          <img src="img/soleado.svg" alt="" srcset="" />
+          <p id="weather-acity-actual">Cloudy</p></di
+        >
+        <div class="temperatura">
+          <p id="temperature-city-actual">31</p>
+          <span>°C</span>
+        </div>
+      </div>
+
+      <div class="second-part">
+        <div class="forecast-days">
+          <h3 class="title-section"><span>3 Days</span> Forecast</h3>
+
+          <ul>
+            <li class="forecast-day">
+              <div class="day">
+                <img src="img/rain.svg" alt="" srcset="" id="forecastImgDay1" />
+                <div class="day-titles">
+                  <p id="forecastDay1">Friday</p>
+                  <span id="forecastWeather1">Rain</span>
+                </div>
+              </div>
+              <div class="temperature">
+                <div>
+                  <p id="forecastTempMax1">32</p>
+                  <span class="c">C </span>
+                  <p id="forecastTempMin1" class="temp-min">23</p>
+                  <span>C</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="forecast-day">
+              <div class="day">
+                <img src="img/dom.svg" alt="" srcset="" id="forecastImgDay2" />
+                <div class="day-titles">
+                  <p id="forecastDay2">Saturday</p>
+                  <span id="forecastWeather2">clear</span>
+                </div>
+              </div>
+              <div class="temperature">
+                <div>
+                  <p id="forecastTempMax2">32</p>
+
+                  <span class="c">C </span>
+                  <p id="forecastTempMin2" class="temp-min">23</p>
+                  <span>C</span>
+                </div>
+              </div>
+            </li>
+            <li class="forecast-day">
+              <div class="day">
+                <img
+                  src="img/soleado.svg"
+                  alt=""
+                  srcset=""
+                  id="forecastImgDay3"
+                />
+                <div class="day-titles">
+                  <p id="forecastDay3">Sunday</p>
+                  <span id="forecastWeather3">Cloudy</span>
+                </div>
+              </div>
+              <div class="temperature">
+                <div>
+                  <p id="forecastTempMax3">32</p>
+                  <span class="c">C</span>
+                  <p id="forecastTempMin3" class="temp-min">23</p>
+                  <span>C</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="place-visit">
+          <div class="titles">
+            <h3 class="title-section"><span>Place to</span> visit</h3>
+            <div>
+              + Top Reviwers
+              <div class="user"></div>
+              <div class="user"></div>
+              <div class="user"></div>
+            </div>
+          </div>
+          <div class="images">
+            <div class="img-izq">
+              <img src="img/map-marker-alt-solid.svg" alt="" srcset="" />
+              <p>
+                Arab Street <br />
+                Singapore
+              </p>
+            </div>
+            <div class="imgs-der">
+              <div class="img-top">
+                <img src="img/map-marker-alt-solid.svg" alt="" srcset="" />
+                <p>
+                  Monserrate <br />
+                  Bogotá
+                </p>
+              </div>
+              <div class="img-bottom">
+                <img src="img/map-marker-alt-solid.svg" alt="" srcset="" />
+                <p>
+                  Caño cristales <br />
+                  Meta
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="places">
+          <div class="place">
+            <div>
+              <img src="img/soleado.svg" alt="" srcset="" />
+              <div class="info">
+                <div class="place-temperature">
+                  <span id="cityTemp"> 29 </span>
+                  <span>°C</span>
+                </div>
+                <p class="place-location">
+                  <span> Lion </span> <br />
+                  <span>FR</span>
+                </p>
+              </div>
+            </div>
+            <div class="info-temperature">
+              <p>Humicity 64%</p>
+              <p>west</p>
+              <p>8.3 km/h</p>
+            </div>
+            <div></div>
+          </div>
+          <div class="place">
+            <div>
+              <img src="img/media-luna.svg" alt="" srcset="" />
+              <div class="info">
+                <div class="place-temperature">
+                  <span id="cityTemp"> 29 </span>
+                  <span>°C</span>
+                </div>
+                <p class="place-location">
+                  <span id="cityName"> Lion </span> <br />
+                  <span id="cityCountryName">Francia</span>
+                </p>
+              </div>
+            </div>
+            <div class="info-temperature">
+              <p>Humicity <span id="cityHumicity">64</span>%</p>
+              <p>west</p>
+              <p><span id="cityWindSpeed">8.3</span> km/h</p>
+            </div>
+            <div></div>
+          </div>
+          <div class="add-location">Add New Locations</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <script src="js/index.js"></script>
+    </div>
+  </body>
+</html>
