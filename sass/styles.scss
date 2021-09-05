@@ -1,0 +1,426 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  --principal: #7d68e9;
+  --second: #e1e8f0;
+  --principal-text: #505050;
+  --second-text: #9c9c9c;
+  font-family: sans-serif;
+}
+
+body {
+  color: var(--principal-text);
+  background-color: var(--second);
+}
+
+.main {
+  background-color: #fff;
+  margin: auto;
+  margin-top: 100px;
+  padding-top: 20px;
+  height: auto;
+  width: 90%;
+  border-radius: 25px;
+}
+
+.ubicacion-actual {
+  position: relative;
+  margin: 30px auto;
+  width: 90%;
+  height: 300px;
+  background: no-repeat center url(../img/bogota-nocturna.jpg) #6f10a8;
+  opacity: 0.9;
+  /*background: url('https://i.pinimg.com/originals/ad/3a/44/ad3a44745cc815386e6ce2399fa66904.jpg') #6f10a8;*/
+  background-size: 100%;
+  border-radius: 25px;
+
+  img {
+    position: absolute;
+    width: 50px;
+    top: 20%;
+    left: 12%;
+    transform: rotate(90deg);
+    filter: drop-shadow(0 1px 5px #fff);
+  }
+
+  p {
+    display: inline-flex;
+    position: relative;
+    top: 10%;
+    left: 10%;
+    color: var(--principal);
+    text-shadow: 3px 5px 10px #fff, -2px -2px 10px #fff;
+    font-size: 2rem;
+    font-weight: 600;
+
+    img {
+      position: absolute;
+      left: -20%;
+      width: 18px;
+      filter: drop-shadow(0 1px 5px #fff);
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.temperatura-lado-izquierdo {
+  z-index: 2;
+  position: fixed;
+  top: 170px;
+  width: 85px;
+  background-color: var(--principal);
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 1px 1px 35px -15px #a7a7a7;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-top: 5px solid var(--principal);
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid var(--principal);
+    border-right: 5px solid transparent;
+    bottom: -10px;
+    left: 0px;
+  }
+
+  .estado-clima {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #6f10a8;
+    font-weight: 600;
+    color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 15px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      border-top: 5px solid transparent;
+      border-left: 5px solid #6f10a8;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #6f10a8;
+      top: -10px;
+      left: 0px;
+    }
+
+    img {
+      width: 50px;
+    }
+  }
+
+  .temperatura {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+
+    p {
+      display: block;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    span {
+      position: relative;
+      top: 0px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.second-part {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 3fr 5fr 3fr;
+  margin: auto;
+  margin-top: 30px;
+  width: 88%;
+
+  .title-section {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .forecast-days {
+    .forecast-day {
+      position: relative;
+      display: flex;
+      margin-bottom: 10px;
+      height: 70px;
+      width: 250px;
+      border-radius: 15px;
+      border: 1px solid #a7a7a7;
+      box-shadow: 1px 1px 35px -15px #a7a7a7;
+      transition-duration: 300ms;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+
+      .day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        width: 70%;
+        font-size: 1rem;
+        font-weight: 600;
+
+        .day-titles {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-size: 0.8rem;
+            color: var(--second-text);
+          }
+        }
+        img {
+          margin-right: 30px;
+          width: 40px;
+        }
+      }
+
+      .temperature {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        top: -2px;
+        right: -2px;
+        width: 80px;
+        height: 71px;
+        background-color: var(--second);
+        color: var(--color-text);
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 15px;
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: start;
+
+          p {
+            font-size: 1.4rem;
+            font-weight: 600;
+          }
+
+          .temp-min {
+            padding-left: 5px;
+            border-left: 1px solid;
+          }
+
+          span {
+            position: relative;
+            top: 3px;
+            font-size: 0.65rem;
+          }
+          .c {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        .temperature {
+          background-color: var(--principal);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.place-visit {
+  width: 85%;
+
+  .titles {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    div {
+      position: relative;
+      top: -8px;
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      cursor: pointer;
+
+      .user {
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        background-color: var(--principal);
+        border-radius: 5px;
+
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+
+  .images {
+    display: flex;
+    justify-content: space-between;
+
+    .img-izq p,
+    .img-top p,
+    .img-bottom p {
+      margin-left: 5px;
+    }
+
+    .img-izq img,
+    .img-top img,
+    .img-bottom img {
+      position: relative;
+      top: 5px;
+      width: 15px;
+    }
+
+    .imgs-der {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 45%;
+    }
+
+    .img-izq {
+      display: inline-flex;
+      padding: 20px;
+      align-items: baseline;
+      width: 45%;
+      height: 220px;
+      border-radius: 25px;
+      box-shadow: 1px 1px 35px -15px #a7a7a7;
+      transition-duration: 300ms;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+
+    .img-top,
+    .img-bottom {
+      display: inline-flex;
+      align-items: baseline;
+      padding: 5px 15px;
+      border-radius: 15px;
+      box-shadow: 1px 1px 35px -15px #a7a7a7;
+      transition-duration: 300ms;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+
+    .img-top {
+      height: 30%;
+    }
+
+    .img-bottom {
+      height: 60%;
+    }
+  }
+}
+
+.places {
+  position: relative;
+  top: -100px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .place,
+  .add-location {
+    background-color: white;
+    box-shadow: 1px 1px 35px -5px #a7a7a7;
+    border-radius: 20px;
+  }
+
+  .place {
+    margin-bottom: 10px;
+    transition-duration: 300ms;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    div {
+      display: flex;
+
+      img {
+        padding: 10px;
+        width: 70px;
+        background-color: #e9f0ff;
+        border-radius: 10px;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+
+        .place-temperature {
+          padding-right: 10px;
+          border-right: 2px solid var(--principal-text);
+
+          span {
+            font-size: 0.8rem;
+
+            &:first-child {
+              font-size: 1.8rem;
+            }
+          }
+        }
+
+        .place-location {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .info-temperature {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 10px;
+      color: var(--second-text);
+      font-size: 0.7rem;
+
+      p {
+        border-left: 1px solid var(--second-text);
+        padding-left: 15px;
+
+        &:first-child {
+          border: none;
+        }
+      }
+    }
+  }
+}
