@@ -36,24 +36,7 @@ body {
   background-size: 100%;
   border-radius: 25px;
 }
-
-.ubicacion-actual > p {
-  display: inline-flex;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  color: var(--principal);
-  text-shadow: 3px 5px 10px #fff, -2px -2px 10px #fff;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.ubicacion-actual > p > img {
-  width: 18px;
-  filter: drop-shadow(0 1px 5px #fff);
-}
-
-.ubicacion-actual > img {
+.ubicacion-actual img {
   position: absolute;
   width: 50px;
   top: 20%;
@@ -61,20 +44,36 @@ body {
   transform: rotate(90deg);
   filter: drop-shadow(0 1px 5px #fff);
 }
+.ubicacion-actual p {
+  display: inline-flex;
+  position: relative;
+  top: 10%;
+  left: 10%;
+  color: var(--principal);
+  text-shadow: 3px 5px 10px #fff, -2px -2px 10px #fff;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.ubicacion-actual p img {
+  position: absolute;
+  left: -20%;
+  width: 18px;
+  filter: drop-shadow(0 1px 5px #fff);
+  transform: rotate(360deg);
+}
 
 .temperatura-lado-izquierdo {
+  z-index: 2;
   position: fixed;
   top: 170px;
   width: 85px;
   background-color: var(--principal);
-
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
   box-shadow: 1px 1px 35px -15px #a7a7a7;
 }
-
 .temperatura-lado-izquierdo::after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   border-top: 5px solid var(--principal);
@@ -84,7 +83,6 @@ body {
   bottom: -10px;
   left: 0px;
 }
-
 .temperatura-lado-izquierdo .estado-clima {
   display: flex;
   flex-flow: column;
@@ -98,9 +96,8 @@ body {
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 15px;
 }
-
 .temperatura-lado-izquierdo .estado-clima::after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   border-top: 5px solid transparent;
@@ -110,11 +107,9 @@ body {
   top: -10px;
   left: 0px;
 }
-
-.estado-clima > img {
+.temperatura-lado-izquierdo .estado-clima img {
   width: 50px;
 }
-
 .temperatura-lado-izquierdo .temperatura {
   display: flex;
   justify-content: center;
@@ -126,10 +121,9 @@ body {
   text-align: center;
   font-size: 1.8rem;
 }
-
-.temperatura-lado-izquierdo .temperatura p > span {
+.temperatura-lado-izquierdo .temperatura span {
   position: relative;
-  top: -10px;
+  top: 0px;
   font-size: 1rem;
 }
 
@@ -141,21 +135,16 @@ body {
   margin-top: 30px;
   width: 88%;
 }
-
-.days-ago > h3,
-.place-visit .titles h3 {
+.second-part .title-section {
   margin-bottom: 15px;
   font-size: 1.5rem;
   text-align: center;
   font-weight: 500;
 }
-
-.days-ago > h3 > span,
-.place-visit .titles h3 > span {
+.second-part .title-section span {
   font-weight: 600;
 }
-
-.days-ago ul > li {
+.second-part .forecast-days .forecast-day {
   position: relative;
   display: flex;
   margin-bottom: 10px;
@@ -167,84 +156,84 @@ body {
   transition-duration: 300ms;
   cursor: pointer;
 }
-
-.days-ago ul > li:hover,
-.place:hover,
-.img-izq:hover,
-.img-top:hover,
-.img-bottom:hover,
-.place-visit .titles > div > .user:hover {
-  transform: scale(1.08);
+.second-part .forecast-days .forecast-day:hover {
+  transform: scale(1.04);
 }
-
-.days-ago ul > li > div {
+.second-part .forecast-days .forecast-day .day {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
   width: 70%;
-}
-
-.days-ago ul > li > .day {
   font-size: 1rem;
   font-weight: 600;
 }
-
-.days-ago ul > li > .day p {
+.second-part .forecast-days .forecast-day .day .day-titles {
   display: flex;
   flex-direction: column;
 }
-
-.days-ago ul > li > .day p > span {
+.second-part .forecast-days .forecast-day .day .day-titles span {
   font-size: 0.8rem;
   color: var(--second-text);
 }
-
-.days-ago ul > li > .day > img {
-  margin-right: 15px;
+.second-part .forecast-days .forecast-day .day img {
+  margin-right: 30px;
   width: 40px;
 }
-
-.days-ago ul > li > .temperature {
+.second-part .forecast-days .forecast-day .temperature {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px;
   top: -2px;
   right: -2px;
-  width: 70px;
+  width: 80px;
   height: 71px;
   background-color: var(--second);
-
   color: var(--color-text);
   font-size: 0.9rem;
   font-weight: 500;
   border-radius: 15px;
 }
-
-.days-ago ul > li:nth-child(1) > .temperature {
+.second-part .forecast-days .forecast-day .temperature div {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.second-part .forecast-days .forecast-day .temperature div p {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.second-part .forecast-days .forecast-day .temperature div .temp-min {
+  padding-left: 5px;
+  border-left: 1px solid;
+}
+.second-part .forecast-days .forecast-day .temperature div span {
+  position: relative;
+  top: 3px;
+  font-size: 0.65rem;
+}
+.second-part .forecast-days .forecast-day .temperature div .c {
+  margin-right: 5px;
+}
+.second-part .forecast-days .forecast-day:nth-child(1) .temperature {
   background-color: var(--principal);
   color: white;
-}
-
-.days-ago ul > li > .temperature > p > span {
-  position: relative;
-  top: -2px;
-  font-size: 0.65rem;
 }
 
 .place-visit {
   width: 85%;
 }
-
 .place-visit .titles {
   display: flex;
   justify-content: space-between;
   text-align: center;
 }
-
 .place-visit .titles h3 {
   font-size: 1.8rem;
 }
-.place-visit .titles > div {
+.place-visit .titles div {
   position: relative;
   top: -8px;
   display: flex;
@@ -252,57 +241,54 @@ body {
   font-size: 0.8rem;
   cursor: pointer;
 }
-.place-visit .titles > div > .user {
+.place-visit .titles div .user {
   margin-left: 5px;
   width: 20px;
   height: 20px;
   background-color: var(--principal);
   border-radius: 5px;
 }
-
-.images {
+.place-visit .titles div .user:hover {
+  transform: scale(1.3);
+}
+.place-visit .images {
   display: flex;
   justify-content: space-between;
 }
-
-.img-izq,
-.imgs-der {
+.place-visit .images .img-izq p,
+.place-visit .images .img-top p,
+.place-visit .images .img-bottom p {
+  margin-left: 5px;
+}
+.place-visit .images .img-izq img,
+.place-visit .images .img-top img,
+.place-visit .images .img-bottom img {
+  position: relative;
+  top: 5px;
+  width: 15px;
+}
+.place-visit .images .imgs-der {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 45%;
 }
-
-.img-izq {
+.place-visit .images .img-izq {
   display: inline-flex;
   padding: 20px;
   align-items: baseline;
+  width: 45%;
   height: 220px;
   border-radius: 25px;
   box-shadow: 1px 1px 35px -15px #a7a7a7;
   transition-duration: 300ms;
   cursor: pointer;
 }
-
-.img-izq > p,
-.img-top > p,
-.img-bottom > p {
-  margin-left: 5px;
+.place-visit .images .img-izq:hover {
+  transform: scale(1.08);
 }
-
-.img-izq > img,
-.img-top > img,
-.img-bottom > img {
-  position: relative;
-  top: 5px;
-  width: 15px;
-}
-
-.imgs-der {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.img-top,
-.img-bottom {
+.place-visit .images .img-top,
+.place-visit .images .img-bottom {
   display: inline-flex;
   align-items: baseline;
   padding: 5px 15px;
@@ -311,12 +297,14 @@ body {
   transition-duration: 300ms;
   cursor: pointer;
 }
-
-.img-top {
+.place-visit .images .img-top:hover,
+.place-visit .images .img-bottom:hover {
+  transform: scale(1.08);
+}
+.place-visit .images .img-top {
   height: 30%;
 }
-
-.img-bottom {
+.place-visit .images .img-bottom {
   height: 60%;
 }
 
@@ -327,62 +315,60 @@ body {
   flex-direction: column;
   width: 100%;
 }
-
-.place {
-  margin-bottom: 10px;
-  transition-duration: 300ms;
-  cursor: pointer;
-}
-
-.place,
-.add-location {
+.places .place,
+.places .add-location {
   background-color: white;
   box-shadow: 1px 1px 35px -5px #a7a7a7;
   border-radius: 20px;
 }
-
-.place > div {
+.places .place {
+  margin-bottom: 10px;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+.places .place:hover {
+  transform: scale(1.08);
+}
+.places .place div {
   display: flex;
 }
-.place > div > img {
+.places .place div img {
   padding: 10px;
   width: 70px;
   background-color: #e9f0ff;
   border-radius: 10px;
 }
-.place > div > .info {
+.places .place div .info {
   display: flex;
   justify-content: space-evenly;
   margin: auto;
 }
-.place-temperature {
-  display: flex;
-  font-size: 1.8rem;
+.places .place div .info .place-temperature {
   padding-right: 10px;
   border-right: 2px solid var(--principal-text);
 }
-
-.place-temperature > span {
+.places .place div .info .place-temperature span {
   font-size: 0.8rem;
 }
-
-.place-location {
+.places .place div .info .place-temperature span:first-child {
+  font-size: 1.8rem;
+}
+.places .place div .info .place-location {
   margin-left: 10px;
 }
-
-.info-temperature {
+.places .place .info-temperature {
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
   color: var(--second-text);
   font-size: 0.7rem;
 }
-
-.info-temperature p {
+.places .place .info-temperature p {
   border-left: 1px solid var(--second-text);
   padding-left: 15px;
 }
-
-.info-temperature > p:first-child {
+.places .place .info-temperature p:first-child {
   border: none;
 }
+
+/*# sourceMappingURL=styles.css.map */

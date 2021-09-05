@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
 
     <title>Document</title>
   </head>
@@ -31,45 +31,47 @@
       </div>
 
       <div class="second-part">
-        <div class="days-ago">
-          <h3><span>3 Days</span> Forecast</h3>
+        <div class="forecast-days">
+          <h3 class="title-section"><span>3 Days</span> Forecast</h3>
 
           <ul>
-            <li>
+            <li class="forecast-day">
               <div class="day">
                 <img src="img/rain.svg" alt="" srcset="" id="forecastImgDay1" />
-                <div>
+                <div class="day-titles">
                   <p id="forecastDay1">Friday</p>
                   <span id="forecastWeather1">Rain</span>
                 </div>
               </div>
               <div class="temperature">
-
-                  <span id="forecastTempMax1">32</span><span>C</span> /
-                  <span id="forecastTempMin1">23</span><span>C</span>
-
+                <div>
+                  <p id="forecastTempMax1">32</p>
+                  <span class="c">C </span>
+                  <p id="forecastTempMin1" class="temp-min">23</p>
+                  <span>C</span>
                 </div>
               </div>
             </li>
 
-            <li>
+            <li class="forecast-day">
               <div class="day">
                 <img src="img/dom.svg" alt="" srcset="" id="forecastImgDay2" />
-                <div>
+                <div class="day-titles">
                   <p id="forecastDay2">Saturday</p>
                   <span id="forecastWeather2">clear</span>
                 </div>
               </div>
               <div class="temperature">
                 <div>
+                  <p id="forecastTempMax2">32</p>
 
-                  <span id="forecastTempMax2">32</span><span>C</span> /
-                  <span id="forecastTempMin2">23</span><span>C</span>
-
+                  <span class="c">C </span>
+                  <p id="forecastTempMin2" class="temp-min">23</p>
+                  <span>C</span>
                 </div>
               </div>
             </li>
-            <li>
+            <li class="forecast-day">
               <div class="day">
                 <img
                   src="img/soleado.svg"
@@ -77,17 +79,17 @@
                   srcset=""
                   id="forecastImgDay3"
                 />
-                <div>
+                <div class="day-titles">
                   <p id="forecastDay3">Sunday</p>
                   <span id="forecastWeather3">Cloudy</span>
                 </div>
               </div>
               <div class="temperature">
                 <div>
-
-                  <span id="forecastTempMax3">32</span><span>C</span> /
-                  <span id="forecastTempMin3">23</span><span>C</span>
-
+                  <p id="forecastTempMax3">32</p>
+                  <span class="c">C</span>
+                  <p id="forecastTempMin3" class="temp-min">23</p>
+                  <span>C</span>
                 </div>
               </div>
             </li>
@@ -95,7 +97,7 @@
         </div>
         <div class="place-visit">
           <div class="titles">
-            <h3><span>Place to</span> visit</h3>
+            <h3 class="title-section"><span>Place to</span> visit</h3>
             <div>
               + Top Reviwers
               <div class="user"></div>
@@ -134,11 +136,14 @@
             <div>
               <img src="img/soleado.svg" alt="" srcset="" />
               <div class="info">
-                <div class="place-temperature">29<span>°C</span></div>
-                <div class="place-location">
-                  <span> Lion </span> <br />
-                  <span>Francia</span>
+                <div class="place-temperature">
+                  <span id="cityTemp"> 29 </span>
+                  <span>°C</span>
                 </div>
+                <p class="place-location">
+                  <span> Lion </span> <br />
+                  <span>FR</span>
+                </p>
               </div>
             </div>
             <div class="info-temperature">
@@ -156,10 +161,10 @@
                   <span id="cityTemp"> 29 </span>
                   <span>°C</span>
                 </div>
-                <div class="place-location">
+                <p class="place-location">
                   <span id="cityName"> Lion </span> <br />
                   <span id="cityCountryName">Francia</span>
-                </div>
+                </p>
               </div>
             </div>
             <div class="info-temperature">
