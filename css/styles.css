@@ -145,10 +145,13 @@ body {
   font-weight: 600;
 }
 
+
 .forecast-days {
   grid-area: "forecast";
 }
 .forecast-days .forecast-day {
+
+
   position: relative;
   display: flex;
   margin-bottom: 10px;
@@ -160,10 +163,12 @@ body {
   transition-duration: 300ms;
   cursor: pointer;
 }
+
 .forecast-days .forecast-day:hover {
   transform: scale(1.04);
 }
 .forecast-days .forecast-day .day {
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,6 +177,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
 }
+
 .forecast-days .forecast-day .day .day-titles {
   display: flex;
   flex-direction: column;
@@ -185,6 +191,7 @@ body {
   width: 40px;
 }
 .forecast-days .forecast-day .temperature {
+
   position: absolute;
   display: flex;
   align-items: center;
@@ -200,11 +207,14 @@ body {
   font-weight: 500;
   border-radius: 15px;
 }
+
 .forecast-days .forecast-day .temperature div {
+
   display: flex;
   justify-content: center;
   align-items: start;
 }
+
 .forecast-days .forecast-day .temperature div p {
   font-size: 1.4rem;
   font-weight: 600;
@@ -214,20 +224,24 @@ body {
   border-left: 1px solid;
 }
 .forecast-days .forecast-day .temperature div span {
+
   position: relative;
   top: 3px;
   font-size: 0.65rem;
-}
+
 .forecast-days .forecast-day .temperature div .c {
   margin-right: 5px;
 }
 .forecast-days .forecast-day:nth-child(1) .temperature {
+
   background-color: var(--principal);
   color: white;
 }
 
 .place-visit {
+
   grid-area: "visit";
+
   width: 85%;
 }
 .place-visit .titles {
@@ -314,7 +328,9 @@ body {
 }
 
 .places {
+
   grid-area: "places";
+
   position: relative;
   top: -100px;
   display: flex;
@@ -377,6 +393,7 @@ body {
   border: none;
 }
 
+
 @media (max-width: 960px) {
   .second-part {
     grid-template-columns: 1fr 1fr;
@@ -406,5 +423,6 @@ body {
     width: 90% !important;
   }
 }
+
 
 /*# sourceMappingURL=styles.css.map */

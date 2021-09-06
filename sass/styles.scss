@@ -155,6 +155,7 @@ body {
       font-weight: 600;
     }
   }
+
 }
 
 .forecast-days {
@@ -245,6 +246,7 @@ body {
       .temperature {
         background-color: var(--principal);
         color: white;
+
       }
     }
   }
@@ -352,7 +354,9 @@ body {
 }
 
 .places {
+
   grid-area: 'places';
+
   position: relative;
   top: -100px;
   display: flex;
@@ -427,6 +431,7 @@ body {
     }
   }
 }
+S
 @media (max-width: 960px) {
   .second-part {
     grid-template-columns: 1fr 1fr;
@@ -459,3 +464,4 @@ body {
     width: 90% !important;
   }
 }
+
