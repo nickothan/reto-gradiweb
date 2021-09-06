@@ -146,10 +146,12 @@ body {
 }
 
 
+
 .forecast-days {
   grid-area: "forecast";
 }
 .forecast-days .forecast-day {
+
 
 
   position: relative;
@@ -164,10 +166,12 @@ body {
   cursor: pointer;
 }
 
+
 .forecast-days .forecast-day:hover {
   transform: scale(1.04);
 }
 .forecast-days .forecast-day .day {
+
 
   display: flex;
   justify-content: center;
@@ -177,6 +181,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
 }
+
 
 .forecast-days .forecast-day .day .day-titles {
   display: flex;
@@ -191,6 +196,7 @@ body {
   width: 40px;
 }
 .forecast-days .forecast-day .temperature {
+
 
   position: absolute;
   display: flex;
@@ -215,6 +221,7 @@ body {
   align-items: start;
 }
 
+
 .forecast-days .forecast-day .temperature div p {
   font-size: 1.4rem;
   font-weight: 600;
@@ -233,6 +240,7 @@ body {
   margin-right: 5px;
 }
 .forecast-days .forecast-day:nth-child(1) .temperature {
+
 
   background-color: var(--principal);
   color: white;
@@ -423,6 +431,5 @@ body {
     width: 90% !important;
   }
 }
-
 
 /*# sourceMappingURL=styles.css.map */
