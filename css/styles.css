@@ -143,12 +143,10 @@ body {
 .second-part .title-section span {
   font-weight: 600;
 }
-
 .forecast-days {
   grid-area: "forecast";
 }
 .forecast-days .forecast-day {
-
   position: relative;
   display: flex;
   margin-bottom: 10px;
@@ -160,12 +158,10 @@ body {
   transition-duration: 300ms;
   cursor: pointer;
 }
-
 .forecast-days .forecast-day:hover {
   transform: scale(1.04);
 }
 .forecast-days .forecast-day .day {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,7 +170,6 @@ body {
   font-size: 1rem;
   font-weight: 600;
 }
-
 .forecast-days .forecast-day .day .day-titles {
   display: flex;
   flex-direction: column;
@@ -222,6 +217,7 @@ body {
   border-left: 1px solid;
 }
 .forecast-days .forecast-day .temperature div span {
+
   position: relative;
   top: 3px;
   font-size: 0.65rem;
@@ -230,13 +226,11 @@ body {
   margin-right: 5px;
 }
 .forecast-days .forecast-day:nth-child(1) .temperature {
-
   background-color: var(--principal);
   color: white;
 }
 
 .place-visit {
-
   width: 85%;
 }
 .place-visit .titles {
@@ -323,7 +317,6 @@ body {
 }
 
 .places {
-
   position: relative;
   top: -100px;
   display: flex;
@@ -393,7 +386,6 @@ body {
 .places .place .info-temperature p:first-child {
   border: none;
 }
-
 @media (max-width: 960px) {
   .second-part {
     grid-template-columns: 1fr 1fr;

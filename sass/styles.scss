@@ -152,7 +152,6 @@ body {
     }
   }
 }
-
 .forecast-days {
   grid-area: 'forecast';
   .forecast-day {
@@ -166,6 +165,7 @@ body {
     box-shadow: 1px 1px 35px -15px #a7a7a7;
     transition-duration: 300ms;
     cursor: pointer;
+
 
     &:hover {
       transform: scale(1.04);
@@ -242,6 +242,7 @@ body {
       .temperature {
         background-color: var(--principal);
         color: white;
+
       }
     }
   }
